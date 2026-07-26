@@ -1,7 +1,7 @@
-# Phase 4 — Ascend NPU 编译器后端
+# Phase 5 — Ascend NPU 编译器后端
 
-> 衔接 Phase 3（MLIR），进入 Ascend NPU 编译器实战
-> 前置：[Phase 3 MLIR](../mlir/README.md)
+> 衔接 Phase 4（Triton-Ascend 编程），进入 Ascend NPU 编译器实战
+> 前置：[Phase 4 Triton-Ascend](../triton-ascend/README.md)
 
 ## 学习路径
 
@@ -25,13 +25,14 @@
 |------|------|
 | **[ascend-samples](../../projects/ascend-samples/)** | 5 个精选用例：从 linalg.generic 到 llvm.func 的完整 Lowering |
 | **[mlir-hello](../../projects/mlir-hello/)** | 前置：MLIR 版 HelloPass（Phase 3 必须跑通） |
+| **[triton-ascend-lab](../../projects/triton-ascend-lab/)** | 前置：Phase 4 动手项目（4 个递增 Triton kernel） |
 
 每个用例含 input.mlir + expected.mlir + README 逐行解读。
 用例 5 含 `trace.sh` 一键追踪完整 Lowering 路径。
 
-## 与 Phase 3 的衔接
+## 与 Phase 4 的衔接
 
-| Phase 3 学会的 | Phase 4 怎么用到 |
+| Phase 4 学会的 | Phase 5 怎么用到 |
 |---------------|----------------|
 | MLIR Dialect 概念 | husion 和 hivm 的具体设计 |
 | Toy Tutorial 的 Pass | ConvertLinalgToHusion 的真实实现 |

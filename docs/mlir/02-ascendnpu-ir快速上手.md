@@ -77,7 +77,7 @@ Ascend NPU 指令
 | 完整 5 步 roadmap | [MLIR-L00](./MLIR-L00-速通与AscendNPU-IR实战.md) |
 | 手写 MLIR Pass | [MLIR-L03](./MLIR-L03-自定义AscendNPU-IR-Pass实战.md) |
 | 一键运行脚本 | [MLIR-L08](./MLIR-L08-ascendnpu-ir-demo可运行流水线.md) |
-| 构建 ascendnpu-ir | [Phase 4 构建指南](../ascend/03-构建与调试指南.md) |
+| 构建 ascendnpu-ir | [Phase 5 构建指南](../ascend/03-构建与调试指南.md) |
 
 ## 验证
 
@@ -86,4 +86,4 @@ Ascend NPU 指令
 - [ ] 知道 husion 的核心概念是"融合"
 
 > 📖 [术语表](../glossary.md)
-> **下一步**：[Phase 4 — Ascend NPU 后端](../ascend/README.md)
+> **下一步**：[Phase 4 — Triton-Ascend 编程实战](../triton-ascend/README.md)

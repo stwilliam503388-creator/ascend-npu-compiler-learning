@@ -1,7 +1,7 @@
 # 00 — Ascend NPU 硬件概述
 
 > 目标：理解 NPU 基本计算模型，不需要硬件细节
-> 前置：[Phase 3 MLIR](../mlir/README.md)
+> 前置：[Phase 4 Triton-Ascend](../triton-ascend/README.md)
 > 预估时间：10 分钟
 
 ## 1. NPU vs GPU vs CPU
