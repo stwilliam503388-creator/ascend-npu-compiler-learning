@@ -57,3 +57,5 @@
 - [ ] 能用 LLVM 概念解释 MLIR 的对应物
 - [ ] 能跑通 Toy Tutorial Ch1-3
 - [ ] 能说出 ascendnpu-ir 的核心 Dialect 和 Lowering 流程
+
+> **下一步**：[Phase 4 — Triton-Ascend 编程实战](../triton-ascend/README.md)

@@ -60,9 +60,9 @@ LLVM/MLIR 是业界最活跃的开源编译器基础设施。一个 LLVM Pass �
 ## 这个项目能带你走到哪？
 
 ```
-你现在                  Phase 1+2 后              Phase 3+4 后（计划中）
-  ↓                        ↓                          ↓
- 零基础          能写 LLVM Pass          能开发 Ascend 编译器后端
+你现在                  Phase 1+2 后              Phase 3+4 后              Phase 5 后
+  ↓                        ↓                          ↓                         ↓
+ 零基础          能写 LLVM Pass          能写 Triton kernel      能开发 Ascend 编译器后端
              能读懂 + 修改 IR          能写自定义 MLIR Dialect
              理解 Pass 运作机制         能参与开源编译器项目
 ```
@@ -80,7 +80,7 @@ LLVM/MLIR 是业界最活跃的开源编译器基础设施。一个 LLVM Pass �
 1. **先建立信心** — 直接跳到 `projects/hello-pass/`，跑通你的第一个 Pass
 2. **概念不用一次全懂** — IR、Pass、Lowering 这些词第一次看不懂没关系，回头查 [术语表](./glossary.md)
 3. **动手 > 阅读** — 每学一个概念就写代码验证，不要只看文档
-4. **预计时间** — Phase 1（45 分钟）+ Phase 2（60 分钟）≈ 2 小时入门
+4. **预计时间** — Phase 1（45 分钟）+ Phase 2（60 分钟）+ Phase 3（120 分钟）+ Phase 4（110 分钟）≈ 5.5 小时入门
 
 ---
 

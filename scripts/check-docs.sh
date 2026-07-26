@@ -45,6 +45,8 @@ check_required_paths() {
         projects/ascendnpu-ir-op-counter
         projects/ascend-samples
         projects/ascendnpu-ir-demo
+        projects/triton-ascend-lab
+        projects/triton-ascend-lab/run-all.sh
         projects/ascendnpu-ir-demo/run-tests.sh
         projects/ascendnpu-ir-demo/test-cases/mlir/01_basic
         projects/ascendnpu-ir-demo/test-cases/mlir/02_intermediate
