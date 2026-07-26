@@ -118,7 +118,7 @@ func.func @add(%A: memref<16xf16, #hivm.address_space<gm>>,
 
 这些操作会被 `ConvertLinalgToHivm` pass 识别并 Lowering 为 `hivm.hir.*` 指令。
 
-## 5. 和 Phase 2/3 的衔接
+## 5. 和 Phase 3/4 的衔接
 
 | 学过的 | AscendNPU-IR 怎么用 |
 |--------|-------------------|
