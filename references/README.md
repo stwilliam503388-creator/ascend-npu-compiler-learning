@@ -2,6 +2,15 @@
 
 本目录收集与编译器学习相关的外部参考资料。
 
+## 官方仓库
+
+| 仓库 | 链接 | 说明 |
+|------|------|------|
+| triton-lang/triton | https://github.com/triton-lang/triton | Triton 官方仓库 |
+| triton-lang/triton-ascend | https://github.com/triton-lang/triton-ascend | Triton Ascend 后端 |
+| Ascend/AscendNPU-IR | https://github.com/Ascend/AscendNPU-IR | 华为昇腾 NPU MLIR 编译器 |
+| Ascend/triton-ascend-kernels | https://gitcode.com/Ascend/triton-ascend-kernels | 极客营算子开发（Gitcode） |
+
 ## 官方文档
 
 | 资源 | 链接 | 说明 |
@@ -10,6 +19,8 @@
 | MLIR 官方文档 | https://mlir.llvm.org/docs/ | MLIR Dialect、Pass、Pattern 文档 |
 | LLVM Language Reference | https://llvm.org/docs/LangRef.html | LLVM IR 完整语法手册（进阶用） |
 | Huawei Ascend 社区 | https://www.hiascend.com/ | Ascend NPU 硬件和 CANN 软件栈 |
+| Triton 官方文档 | https://triton-lang.org/ | Triton API、编程模型、tutorials |
+| AscendC 文档 | https://www.hiascend.com/document?tag=ascendc | AscendC 算子开发语言 |
 
 ## 推荐阅读
 

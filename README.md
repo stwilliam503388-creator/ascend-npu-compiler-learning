@@ -118,6 +118,35 @@ bash scripts/check-docs.sh
 - 综合 demo：[projects/ascendnpu-ir-demo/README.md](projects/ascendnpu-ir-demo/README.md)
 - 历史总结：[SUMMARY.md](SUMMARY.md)
 
+## 相关资源
+
+### 官方仓库
+
+| 仓库 | 说明 |
+|------|------|
+| [triton-lang/triton](https://github.com/triton-lang/triton) | Triton 官方仓库（GPU kernel 语言与编译器） |
+| [triton-lang/triton-ascend](https://github.com/triton-lang/triton-ascend) | Triton Ascend 后端，对接昇腾 NPU |
+| [Ascend/AscendNPU-IR](https://github.com/Ascend/AscendNPU-IR) | 华为昇腾 NPU MLIR 编译器项目 |
+| [Ascend/triton-ascend-kernels](https://gitcode.com/Ascend/triton-ascend-kernels) | 极客营 Triton 算子开发仓库（Gitcode） |
+
+### 官方文档
+
+| 文档 | 链接 | 说明 |
+|------|------|------|
+| Triton 语言文档 | https://triton-lang.org/ | Triton API、编程模型、tutorials |
+| MLIR 文档 | https://mlir.llvm.org/docs/ | Dialect、Pass、Pattern 体系 |
+| LLVM 文档 | https://llvm.org/docs/ | LLVM IR、Pass 编写指南 |
+| 昇腾社区 | https://www.hiascend.com/ | Ascend NPU 硬件文档、CANN 软件栈 |
+| AscendC 文档 | https://www.hiascend.com/document?tag=ascendc | AscendC 算子开发语言文档 |
+
+### 官方教程
+
+| 教程 | 链接 | 说明 |
+|------|------|------|
+| Triton 官方 Tutorials | https://triton-lang.org/main/getting-started/tutorials/ | vector_add → matmul → fused attention |
+| MLIR Toy Tutorial | https://mlir.llvm.org/docs/Tutorials/Toy/ | 官方 MLIR 入门教程（Ch1-7） |
+| LLVM Kaleidoscope | https://llvm.org/docs/tutorial/ | LLVM 官方语言实现教程 |
+
 ## 许可证
 
 本项目使用 [MIT License](LICENSE)。
