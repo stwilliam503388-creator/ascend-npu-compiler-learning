@@ -23,7 +23,7 @@
 
 | 项目 | 说明 |
 |------|------|
-| **[triton-ascend-lab](../../projects/triton-ascend-lab/)** | 4 个递增 kernel：vector_add → softmax → matmul_tile → fused_layernorm |
+| **[triton-ascend-lab](../../projects/triton-ascend-lab/)** | 8 个递增 kernel，覆盖 5 种模式 |
 
 每个 kernel 含 Python 源码 + TTIR dump + Ascend NPU 对照解析。
 
@@ -37,7 +37,7 @@
 
 ## 学完验证
 
-- [ ] 能写出一个简单的 vector_add Triton kernel
+- [ ] 能写出简单的 Triton kernel（逐元素/归约/矩阵乘/归一化/融合）
 - [ ] 能说出 block/grid/program 三者的关系
 - [ ] 知道 gm/ub 地址空间如何影响 kernel 写法
 - [ ] 能画出 Triton kernel 到 hivm.hir 的大致路径

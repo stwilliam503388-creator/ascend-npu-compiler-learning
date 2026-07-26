@@ -167,7 +167,9 @@ fused_add_mul, fused_layernorm + residual
 写完 Phase 4 后：
 
 ```
-你的水平：能写 Triton kernel，理解 Ascend 硬件约束
+你的水平：能写 5 种模式的 Triton kernel，理解 Ascend 硬件约束
+    ↓
+参考 FlagGems：150+ 个真实 Triton 算子实现 (github.com/FlagOpen/FlagGems)
     ↓
 Phase 5: 深入理解 Ascend NPU 编译器的内部（hivm, hacc, Pass）
     ↓

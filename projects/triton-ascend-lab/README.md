@@ -1,18 +1,34 @@
 # Triton-Ascend Lab
 
-> Phase 4 动手项目：4 个递增 Triton kernel，从入门到融合优化
+> Phase 4 动手项目：8 个递增 Triton kernel，覆盖 5 种算子模式
 
-## 4 个 kernel 递进关系
+## 8 个 kernel 递进关系
 
 ```
-kernel-1: vector_add        ← 最简：理解 block/grid + gm↔ub
-    ↓
-kernel-2: softmax           ← 归约：多阶段算法 + warp reduce
-    ↓
-kernel-3: matmul_tile       ← 经典：tile 切分 + Cube Unit 利用
-    ↓
-kernel-4: fused_layernorm   ← 融合：减少 gm↔ub 搬运 + SIMT/SIMD 双模
+kernel-1: vector_add      ← 最简：理解 block/grid + gm↔ub
+kernel-2: softmax         ← 归约：多阶段算法
+kernel-3: matmul_tile     ← 经典：tile 切分 + Cube Unit
+kernel-4: fused_layernorm ← 融合：减少搬运
+kernel-5: sigmoid         ← 逐元素激活：一行公式
+kernel-6: gelu            ← 逐元素激活：多项式近似
+kernel-7: rms_norm        ← 归一化 (新)：LLaMA 标配
+kernel-8: group_norm      ← 归一化 (进阶)：2D grid + 双维度归约
 ```
+
+## 5 种模式覆盖
+
+| 模式 | kernel | 状态 |
+|------|--------|:--:|
+| 逐元素 | 1(vector_add), 5(sigmoid), 6(gelu) | ✅ 3/3 |
+| 归约 | 2(softmax) | ✅ 1/1 |
+| 矩阵乘 | 3(matmul_tile) | ✅ 1/1 |
+| 归一化 | 4(layernorm), 7(rms_norm), 8(group_norm) | ✅ 3/3 |
+| 融合 | 4(fused_layernorm) | ✅ 1/1 |
+
+## 参考项目
+
+- [FlagGems](https://github.com/FlagOpen/FlagGems) — 150+ Triton 算子参考实现
+- kernel-5~8 均标注了对应的 FlagGems 源文件
 
 ## 运行
 
