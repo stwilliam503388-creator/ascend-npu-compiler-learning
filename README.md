@@ -16,7 +16,7 @@
 
 ```text
 为什么学 → Primer 零基础 → LLVM IR / Pass → MLIR Dialect / Lowering
-        → AscendNPU-IR / Triton 对照 → 可运行 demo 与测试用例
+        → Triton-Ascend 编程实战 → Ascend NPU 后端深入 → 可运行 demo 与测试用例
 ```
 
 > 术语说明：本仓库中出现的 **AscendNPU-IR** 与 **BishengIR** 指向同一类 Ascend NPU MLIR 编译器项目语境。AscendNPU-IR 是官方仓库名称，BishengIR 是相关源码中常见的命名空间和工具名前缀。
@@ -55,7 +55,7 @@ ascend-npu-compiler-learning/
 │   ├── hello-pass/              # 第一个 LLVM Pass
 │   ├── opt-pass/                # 修改 IR 的 LLVM Pass
 │   ├── mlir-hello/              # 第一个 MLIR Pass
-│   ├── triton-ascend-lab/       # Phase 5: 4 个递增 Triton kernel
+│   ├── triton-ascend-lab/       # Phase 4: 4 个递增 Triton kernel
 │   ├── toy-mini/                # 纯 C++17 Toy 前端
 │   ├── standalone-mlir/         # 自定义 MLIR Dialect 工程模板
 │   ├── ascendnpu-ir-op-counter/ # AscendNPU-IR Pass 参考代码
@@ -76,7 +76,11 @@ bash setup.sh
 cd projects/hello-pass
 ./run.sh
 
-# 3. MLIR/AscendNPU-IR 综合 demo（无 mlir-opt 时会自动降级为标注检查）
+# 3. 第一个 Triton kernel（无需 Ascend 硬件）
+cd ../triton-ascend-lab
+bash run-all.sh
+
+# 4. MLIR/AscendNPU-IR 综合 demo（无 mlir-opt 时会自动降级为标注检查）
 cd ../ascendnpu-ir-demo
 bash run-tests.sh
 ```
@@ -97,20 +101,51 @@ bash scripts/check-docs.sh
 - 解释 AST、IR、SSA、Pass、Lowering、Dialect 的区别。
 - 读懂一个简单 LLVM IR / MLIR 文件。
 - 运行并修改一个 LLVM Pass 或 MLIR Pass。
-- 说明 Triton kernel 如何进入 MLIR 编译路径。
-- 画出 AscendNPU-IR 中 Linalg → HFusion / Husion → HIVM → LLVM/CANN 的大致链路。
+- 写出一个 Triton kernel 并理解 block/grid/tile 三层编程模型。
+- 说明 Triton kernel 如何编译为 TTIR → hivm.hir，最终在 Ascend NPU 上执行。
+- 知道 Ascend NPU 的 gm/ub 内存层次和 Cube/Vector 计算单元如何影响 kernel 写法。
+- 画出 AscendNPU-IR 中 Linalg → Husion → HIVM → LLVM/CANN 的大致链路。
 - 理解为什么 NPU 编译器需要保留 matmul / conv 等高级语义，而不是过早展开为标量循环。
 
 ## 常用入口
 
 - 快速入门：[docs/quickstart.md](docs/quickstart.md)
-- 完整学习路径与项目背景：[docs/learning-path.md](docs/learning-path.md)
+- 完整学习路径：[docs/triton-ascend/README.md](docs/triton-ascend/README.md)（含 7 个 Phase）
 - 术语表：[docs/glossary.md](docs/glossary.md)
 - 技术术语速查手册：[docs/reference/技术术语速查手册.md](docs/reference/技术术语速查手册.md)
+- Triton-Ascend 动手：[projects/triton-ascend-lab/README.md](projects/triton-ascend-lab/README.md)
 - 动手项目索引：[projects/README.md](projects/README.md)
 - 综合 demo：[projects/ascendnpu-ir-demo/README.md](projects/ascendnpu-ir-demo/README.md)
-- 综合 demo 用例导读：[docs/ascendnpu-ir-demo-case-guide.md](docs/ascendnpu-ir-demo-case-guide.md)
 - 历史总结：[SUMMARY.md](SUMMARY.md)
+
+## 相关资源
+
+### 官方仓库
+
+| 仓库 | 说明 |
+|------|------|
+| [triton-lang/triton](https://github.com/triton-lang/triton) | Triton 官方仓库（GPU kernel 语言与编译器） |
+| [triton-lang/triton-ascend](https://github.com/triton-lang/triton-ascend) | Triton Ascend 后端，对接昇腾 NPU |
+| [Ascend/AscendNPU-IR](https://github.com/Ascend/AscendNPU-IR) | 华为昇腾 NPU MLIR 编译器项目 |
+| [Ascend/triton-ascend-kernels](https://gitcode.com/Ascend/triton-ascend-kernels) | 极客营 Triton 算子开发仓库（Gitcode） |
+
+### 官方文档
+
+| 文档 | 链接 | 说明 |
+|------|------|------|
+| Triton 语言文档 | https://triton-lang.org/ | Triton API、编程模型、tutorials |
+| MLIR 文档 | https://mlir.llvm.org/docs/ | Dialect、Pass、Pattern 体系 |
+| LLVM 文档 | https://llvm.org/docs/ | LLVM IR、Pass 编写指南 |
+| 昇腾社区 | https://www.hiascend.com/ | Ascend NPU 硬件文档、CANN 软件栈 |
+| AscendC 文档 | https://www.hiascend.com/document?tag=ascendc | AscendC 算子开发语言文档 |
+
+### 官方教程
+
+| 教程 | 链接 | 说明 |
+|------|------|------|
+| Triton 官方 Tutorials | https://triton-lang.org/main/getting-started/tutorials/ | vector_add → matmul → fused attention |
+| MLIR Toy Tutorial | https://mlir.llvm.org/docs/Tutorials/Toy/ | 官方 MLIR 入门教程（Ch1-7） |
+| LLVM Kaleidoscope | https://llvm.org/docs/tutorial/ | LLVM 官方语言实现教程 |
 
 ## 许可证
 

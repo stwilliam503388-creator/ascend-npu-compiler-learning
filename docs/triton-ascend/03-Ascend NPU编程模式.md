@@ -160,14 +160,27 @@ fused_add_mul, fused_layernorm + residual
 | 22-24 | log_softmax | 归约 | 开发 / 迁移 / 优化 |
 | 25-27 | gelu | 逐元素 | 开发 / 迁移 / 优化 |
 
-**规律**：每个算子都是"开发→迁移→优化"三段式，对应三个难度级别。
+**规律**：每个算子都是"开发→迁移→优化"三段式，对应三个难度级别。优化阶段的核心工具是 [msprof](../ascend/05-msprof入门.md)。
+
+## 4. AscendC 对比
+
+Triton 不是唯一的 Ascend NPU 编程路径。华为还提供原生 [AscendC](../ascend/04-AscendC对比.md)（C++ 扩展），适合追求极致性能或深度对接 CANN 的场景。
+
+| | Triton | AscendC |
+|---|--------|---------|
+| 语言 | Python DSL | C/C++ |
+| 性能 | 好 | 极致 |
+| 可移植 | GPU + NPU | 仅 NPU |
+| 本项目 | Phase 4 主路径 | 参考文档 |
 
 ## 4. 后续学习路径
 
 写完 Phase 4 后：
 
 ```
-你的水平：能写 Triton kernel，理解 Ascend 硬件约束
+你的水平：能写 5 种模式的 Triton kernel，理解 Ascend 硬件约束
+    ↓
+参考 FlagGems：150+ 个真实 Triton 算子实现 (github.com/FlagOpen/FlagGems)
     ↓
 Phase 5: 深入理解 Ascend NPU 编译器的内部（hivm, hacc, Pass）
     ↓

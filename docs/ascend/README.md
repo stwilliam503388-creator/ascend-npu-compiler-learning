@@ -18,6 +18,8 @@
 | 01 | [husion / hivm Dialect 详解](./01-husion-hivm-Dialect详解.md) | 融合→指令 完整 Lowering | 20 min |
 | 02 | [一个 Ascend Pass 详解](./02-一个Ascend-Pass详解.md) | .td + .cpp + 测试 三层拆解 | 25 min |
 | 03 | [构建与调试指南](./03-构建与调试指南.md) | clone → 构建 → 跑测试 → 调试 | 30 min |
+| 04 | [Triton vs AscendC 对比](./04-AscendC对比.md) | 两条 Ascend 编程路径的选择指南 | 10 min |
+| 05 | [msprof 性能分析入门](./05-msprof入门.md) | Ascend kernel 性能分析方法和调优 | 10 min |
 
 ## 动手项目
 

@@ -9,6 +9,7 @@
 | [hello-pass](./hello-pass/) | ⭐ | LLVM 入门 | LLVM `opt` / CMake | 第一个 LLVM FunctionPass：打印函数信息 | `cd hello-pass && ./run.sh` |
 | [opt-pass](./opt-pass/) | ⭐⭐ | LLVM 进阶 | LLVM `opt` / CMake | 死代码消除 Pass，展示如何修改 IR | `cd opt-pass && ./run.sh` |
 | [mlir-hello](./mlir-hello/) | ⭐ | MLIR 入门 | MLIR 库 / clang++ | 45 行独立程序，遍历 `func.func` | `cd mlir-hello && ./run.sh` |
+| [triton-ascend-lab](./triton-ascend-lab/) | ⭐ | Triton-Ascend | `pip install triton` | 4 个递增 Triton kernel，从 vector_add 到 fused_layernorm | `cd triton-ascend-lab && bash run-all.sh` |
 | [toy-mini](./toy-mini/) | ⭐ | 编译器前端 | C++17 编译器 | 纯 C++17 Toy 解析器和 MLIR 风格文本输出 | `g++ -std=c++17 -o toymini toymini.cpp` |
 | [standalone-mlir](./standalone-mlir/) | ⭐⭐⭐ | MLIR 工程 | LLVM/MLIR + CMake 或 Make | 自定义 Dialect、TableGen、Pass、`standalone-opt` | `cmake --build build` 或 `make` |
 | [ascendnpu-ir-op-counter](./ascendnpu-ir-op-counter/) | ⭐⭐⭐ | Ascend Pass | AscendNPU-IR 源码环境 | 分析 Pass 和转换 Pass 参考代码 | 放入 AscendNPU-IR 工程中构建 |
@@ -19,7 +20,7 @@
 
 ```text
 hello-pass → opt-pass → mlir-hello → toy-mini
-          → standalone-mlir → ascendnpu-ir-demo
+          → standalone-mlir → triton-ascend-lab → ascendnpu-ir-demo
           → ascend-samples / ascendnpu-ir-op-counter
 ```
 
@@ -30,6 +31,7 @@ hello-pass → opt-pass → mlir-hello → toy-mini
 - `hello-pass`：理解 Pass 是“遍历 IR 并做事”。
 - `opt-pass`：理解 Pass 可以修改 IR。
 - `toy-mini`：理解源码如何变成 AST，再输出 IR 风格文本。
+- `triton-ascend-lab`：理解 Triton kernel 的 tile-based 编程模型，无需 GPU/NPU 硬件。
 
 ### 需要 LLVM/MLIR 环境
 
