@@ -51,3 +51,16 @@
 - [ ] 能画出 linalg → husion → hivm 完整路径
 - [ ] 能看懂一个 Pass 的 .td + .cpp + 测试 三部分
 - [ ] 能在自己机器上构建并运行 ascendnpu-ir 测试
+
+## 推荐外部项目
+
+学完 Phase 5 后，可以深入以下真实编译器项目：
+
+| 项目 | 说明 | 看什么 |
+|------|------|--------|
+| [triton-lang/triton-ascend](https://github.com/triton-lang/triton-ascend) | Triton Ascend 后端 | `ascend_interpreter.py`（IR→CANN 映射） |
+| [AscendNPU-IR](https://gitcode.com/Ascend/AscendNPU-IR) | 昇腾 MLIR 编译器 | `ConvertLinalgToHivm` pass |
+| [FlagTree](https://github.com/flagos-ai/FlagTree) | Triton 多芯片 fork | 多后端编译器架构 |
+| [cutlass](https://github.com/NVIDIA/cutlass) | GPU 模板库（Triton 设计参考） | matmul 经典实现 |
+
+> 完整 Tier 3/4 项目列表见 [references/README.md](../../references/README.md)

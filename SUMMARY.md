@@ -179,6 +179,15 @@ projects/hello-pass/             ← 动手项目：第一个 LLVM Pass
 >
 > 详见 [docs/ascend/README.md](docs/ascend/README.md)
 > 
-> 预计包含：Ascend NPU 硬件架构、CANN 软件栈、
+> Ascend NPU 硬件架构、CANN 软件栈、
 > TBE 算子开发、从 MLIR 到 Ascend 的 Lowering
+
+---
+
+## 后续更新 (2026-07)
+
+| 日期 | 内容 | PR |
+|------|------|:--:|
+| 2026-07-22 | 新增 Phase 4 Triton-Ascend 编程实战（5 篇文档 + 8 kernel lab） | #18 |
+| 2026-07-26 | references/README.md 重构为 4 层分级推荐（25 个项目 + 视频/论文/工具/社区） | #19 |
 
