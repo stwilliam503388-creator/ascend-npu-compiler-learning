@@ -175,17 +175,27 @@ Triton 不是唯一的 Ascend NPU 编程路径。华为还提供原生 [AscendC]
 
 ## 4. 后续学习路径
 
-写完 Phase 4 后：
+写完 Phase 4 后，你的水平是能写 5 种模式的 Triton kernel，理解 Ascend 硬件约束。下一步：
 
 ```
-你的水平：能写 5 种模式的 Triton kernel，理解 Ascend 硬件约束
-    ↓
-参考 FlagGems：150+ 个真实 Triton 算子实现 (github.com/FlagOpen/FlagGems)
-    ↓
-Phase 5: 深入理解 Ascend NPU 编译器的内部（hivm, hacc, Pass）
-    ↓
-极客营任务书：从 30 个任务中挑一个，完成"开发→迁移→优化"全流程
-```
+Tier 2：实战参考
+  ├─ FlagGems (150+ 真实算子，看工业级写法)
+  ├─ triton-ascend-kernels (华为官方 Ascend 生产级适配)
+  ├─ FlagAttention (高效注意力优化技巧)
+  ├─ DeepGEMM (DeepSeek FP8 GEMM 实战)
+  └─ 极客营 30 任务书 — 挑一个完成"开发→迁移→优化"
+
+Tier 3：编译器深入 (Phase 5)
+  ├─ triton-ascend (ascend_interpreter.py, CANN 对接)
+  ├─ AscendNPU-IR (hivm/hacc dialect, Lowering pass)
+  └─ cutlass (GPU 模板库，理解 matmul 经典实现)
+
+必读论文:
+  - Triton (ASPLOS 2019)
+  - FlashAttention (NeurIPS 2022)
+  - MLIR (CGO 2020)
+
+> 完整项目导航见 [references/README.md](../../references/README.md)
 
 ---
 

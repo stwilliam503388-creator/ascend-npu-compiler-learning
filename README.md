@@ -120,7 +120,19 @@ bash scripts/check-docs.sh
 
 ## 相关资源
 
-### 官方仓库
+### 按学习阶段推荐
+
+| 阶段 | 推荐项目 | 学什么 |
+|:--:|------|------|
+| Phase 1-3 后 | [TritonAcademy](https://github.com/MekkCyber/TritonAcademy) | Triton 入门教程 |
+| Phase 4 中 | [FlagGems](https://github.com/flagos-ai/FlagGems) + [triton-ascend-kernels](https://gitcode.com/Ascend/triton-ascend-kernels) | 真实算子参考 |
+| Phase 4 后 | [FlagAttention](https://github.com/flagos-ai/FlagAttention) | 注意力优化 |
+| Phase 5 后 | [triton-lang/triton-ascend](https://github.com/triton-lang/triton-ascend) + [AscendNPU-IR](https://gitcode.com/Ascend/AscendNPU-IR) | 编译器源码 |
+| 进阶 | [SageAttention](https://github.com/thu-ml/SageAttention) + [FlagTree](https://github.com/flagos-ai/FlagTree) | 前沿研究 |
+
+> 完整分层导航见 [references/README.md](references/README.md)
+
+### 官方仓库和文档
 
 | 仓库 | 说明 |
 |------|------|
