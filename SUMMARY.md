@@ -191,3 +191,22 @@ projects/hello-pass/             ← 动手项目：第一个 LLVM Pass
 | 2026-07-22 | 新增 Phase 4 Triton-Ascend 编程实战（5 篇文档 + 8 kernel lab） | #18 |
 | 2026-07-26 | references/README.md 重构为 4 层分级推荐（25 个项目 + 视频/论文/工具/社区） | #19 |
 
+
+---
+
+## 八、AscendNPU-IR 编译器管线深度分析 [2026-08]
+
+> `docs/ascendnpu-ir/pipeline/`
+
+基于 code-review-graph 对 AscendNPU-IR 源码的结构化分析，覆盖 714 个源文件、~216,000 行代码。
+
+| 文档 | 内容 |
+|------|------|
+| **HFusion_Pipeline_详解.md** | 融合优化管线 7 阶段、9 种 FusionKind、4 个 AutoSchedule 调度器 |
+| **HIVM_Pipeline_详解.md** | 硬件映射管线 2 条 × 5 阶段、60+ Pass、PlanMemory/GraphSyncSolver 核心算法 |
+| **HFusion_HIVM_完整详解.md** | 完整版：项目概述 + 代码片段 + 数据流图 + 路径映射 + 完整链路 |
+
+核心发现:
+- HFusion: 133 文件, 50K 行。OpFusion（Union-Find 规则验证）+ AutoSchedule（PBR/Cube/CV 策略分发）
+- HIVM: 241 文件, 85K 行。PlanMemory（区间分配复用）+ GraphSyncSolver（依赖图事件 ID 分配）
+- 9 种 FusionKind: PureElemwise→AnyPB→LastAxisPBR→AnyPBR→SingleCube→ShallowCV→ShallowVV→MixCV→MixC2
